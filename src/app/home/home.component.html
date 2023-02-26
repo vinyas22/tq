@@ -1,0 +1,173 @@
+<!-- <p>home works!</p> -->
+
+ 
+<div class="header">
+    <h2 class="headd">Blog Spot</h2>
+    <form>
+      <h1>Login</h1>
+      <div class="content">
+        <div class="input-field">
+          <input type="email" placeholder="Name" autocomplete="nope" class="ip" id="em" [(ngModel)]="user.name" [(ngModel)]="cmess.name"  [ngModelOptions]="{standalone: true}">
+        </div>
+        
+         
+        <!-- <button (click)="opennew($event)">Sign in</button> -->
+        <P>Login to  Like and Comment the Blogs</P>
+        <button type="button" class="btn btn-primary"   (click)= "login()">Login</button>
+        <!-- <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="openaccount($event)"> -->
+      </div>
+    </form> 
+  </div>
+
+  <ul>
+    <li>
+     <b> Health and wellness</b>
+      <p>Description..</p>
+     <h5> Whether you’re interested in staying fit, trying healthy new recipes, clearing your mind—or all of the above—these blogs will help you create a healthier lifestyle for yourself.
+       Bookmark this list to keep them handy when you need them most.</h5>
+     <b>  Likes  {{ users?.length }} Comments {{ coms?.length }} </b>
+
+    </li>
+    <hr>  
+    <li>
+      <b>Fashion with Simple steps </b>
+      <p>Description..</p>
+     <h5> The rise of fashionable Instagram influencers and stylists paved the way for the bloggers on our list to have a significant presence online. Many of these bloggers started out on social media, and their 
+      keen eye for style did not go unnoticed by their followers</h5>
+     <b>  Likes  {{ users1?.length }} Comments {{ coms1?.length }} </b>
+    </li>
+    <hr>
+    <li>
+      <b>Tips To maintain Healthy Relationships </b>
+      <p>Description..</p>
+     <h5>Relationships aren’t one-size-fits-all. There are many qualities and factors behind the emotions and actions that make up healthy relationships. Yet no matter who you love, how you met or the history you have together, healthy relationships do have certain core traits. A healthy relationship is one in which you feel valued, trusted and respected – period.
+       Ask yourself if your relationship has these qualities: </h5>
+     <b>  Likes  {{ users2?.length }} Comments {{ coms2?.length }} </b>
+    </li>
+
+  </ul>
+  <!-- <div>{{ users?.length }}</div> -->
+  
+  <div class="row"  >
+    <div class="leftcolumn">
+      <div class="card">
+        <h2><B style="color: rgb(113, 199, 33);">Health and wellness</B></h2>
+        <h5>Created By Praveen ,Created On Dec 10, 2022 </h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p>Description in detail</p>
+        <p>1. The Balanced Life with Robin Long
+          Why follow? As a fitness instructor and mom of four, Robin Long’s motto is “Grace over guilt.” She offers a variety of free Pilates and barre workouts designed to help busy women fit at-home exercise into their regular routine. The Balanced Life offers far more than workout videos, though. You’ll also find a supportive membership community, a blog filled with healthy recipes and intentional living tips and targeted workout series to help you meet your fitness goals.
+          <br>
+          2. ACE Fitness
+          Why follow? The American Council on Exercise (ACE) hosts this fitness and healthy lifestyle blog. You don’t need to be an Olympic athlete to implement these wellness tips! The ACE Fitness blog has accessible workouts everyday people can do at home. From fun family workouts that parents and kids can do together to targeted fitness and stress-reduction tips for your age group, this blog will encourage you to make your health a priority, without a gym membership.
+          <br>
+          3. Run to the Finish
+          Why follow? The running community has its own specific fitness and nutrition needs, and the Run to the Finish blog is here to address them. Whether you’ve just taken up the sport or you’re a marathon finisher, this blog touches on concerns specific to runners at all levels, including dealing with knee pain, working in strength training and finding the best gear to keep you safe and comfortable on your runs.</p>
+        <hr>  
+        <span (click)="open()"  (click)="openlikes($event)"><img   class="like" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFtRCbQ8ttOqO6V-JTwBMn1dZ0KYq0oHnbAg&usqp=CAU"/>
+        </span> <span>Liked by {{ users?.length }} people.. <span *ngIf="isShown">You({{y}}) </span><div  class="likee" *ngFor="let user of users">
+        <div >{{user.name}} ,</div>  
+        
+      </div>
+    
+        
+      </span> 
+      <span >
+        <br>
+       <input type="text"  placeholder="enter your comment here" id="cm" [(ngModel)]="cmess.message" />
+       <button type="button" class="btn btn-primary"   (click)= "opencoms($event)">Send</button>
+      <br>{{ coms?.length }} Comments <br>You:{{c}} <span *ngFor="let com of coms">
+        
+          <ul class="myul">   <li fxLayout="row">  {{com.name}}:  {{com.message}}   </li>
+          
+          </ul>
+        </span>
+        
+      </span>
+        
+      </div>
+      <div class="card" >
+        <h2><B style="color: palevioletred;">Fashion with Simple steps</B></h2>
+        <h5>Created By Jaffar,Created On Sep 17, 2020</h5>
+        <div class="fakeimg1" style="height:350px;"></div>
+        <p>Description in detail</p>
+        <p>1. Work your capsule wardrobe. Make sure you have reliable wardrobe staples: an iconic little black dress, a pair of jeans that fit perfectly, a classic blazer, simple T-shirts and button-downs in neutral colors, and an effortless leather jacket (or denim jacket). Investing in a capsule collection of mix-and-match basics (and learning how to style them) is the key to looking put together.
+         <br> 2. Make sure your clothes fit perfectly. One trick to making any item of clothing look amazing is to hire a good tailor. Tailored clothing not only looks polished, but it also feels more comfortable. Pants that drag on the ground and dresses that bunch up awkwardly won't make you feel stylish. If your capsule wardrobe fits you well, you can start to play with over- and under-sized items 
+          in a way that feels fashionable, not sloppy.
+         <br> 3. Learn how to balance proportions. Balancing proportions is about styling your outfits to create an overall aesthetic harmony. The way you achieve this is by wearing clothes that are fitted to your body shape. When you want to play with oversized clothes or unusual shapes, make it a fashion moment by keeping the rest of the look fitted. For example, try pairing a tight crop top with wide-leg jeans,
+           or a puff-shoulder top with straight-leg pants.
+           <br>  4. Find your personal style. Developing a signature style can take years, but you can get started by creating a moodboard. Remember that personal style is an experiment; you never know what amazing looks await you until you're in the dressing room. The categories "menswear" and "womenswear" shouldn't dictate how you shop. Take time to play with colors and shapes to find what looks great on your unique body.
+           <br> 5. Become a better shopper. Learning how to shop for exactly what you want will help you avoid filling your closet full of items you never wear. When your wardrobe consists of pieces that you love, styling an outfit will become second nature.
+           <br>  6. Add a belt. Adding a belt to your look is one of the easiest ways to make any outfit look more put-together. It's also a great trick for bringing balance to a look that otherwise might not work—like a long cashmere sweater and billowy midi skirt.
+           <br> 7. Play with color. If you're nervous about adding color to your look, start with just one colorful piece, and keep the rest of your look neutral. As you get more comfortable with colors, you'll learn which color combinations work best for your style. Take a look at a color wheel for inspiration.</p>
+      <hr>
+      <span (click)="open()"  (click)="openlikes1($event)"><img   class="like" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFtRCbQ8ttOqO6V-JTwBMn1dZ0KYq0oHnbAg&usqp=CAU"/>
+      </span> <span>Liked by {{ users1?.length }} people.. <span *ngIf="isShown">You({{y}}) </span><div  class="likee" *ngFor="let user of users1">
+      <div >{{user.name}} ,</div>  
+      
+    </div>
+  
+      
+    </span> 
+    <span >
+      <br>
+     <input type="text"  placeholder="enter your comment here" id="cm1" [(ngModel)]="cmess.message" />
+     <button type="button" class="btn btn-primary"   (click)= "opencoms1($event)">Send</button>
+    <br>  {{ coms1?.length }} Comments<br>You:{{d}} <span *ngFor="let com of coms1">
+        <ul class="myul">  <li fxLayout="row">{{com.name}}:  {{com.message}}   </li>
+        
+        </ul>
+      </span>
+     
+    </span>   
+      </div>
+      <div class="card">
+        <h2>Tips To maintain Healthy Relationships</h2>
+        <h5>Created By Sahitya,Created On Jan 20, 2023</h5>
+        <div class="fakeimg2" style="height:400px;"></div>
+        <p>Description..</p>
+        <p>COMMUNICATION:
+          Communicating with your partner sounds easy, but it means more than just talking about your day. Real communication leads to an emotional connection you can’t get anywhere else.
+          <br>
+          HONESTY:
+          This is an essential part of communication. Healthy relationships involve two people who are completely honest about how they feel and what they’re thinking – with themselves and each other.
+          <br>
+          VULNERABILITY:
+          When you’re open and honest in a relationship, vulnerability naturally follows. If you don’t trust your partner to support you no matter what, you’re not in a healthy relationship.
+          <br>
+          GROWTH:
+          If you’re not growing, you’re dying – and that includes your relationships. When you commit to constant and never-ending improvement, you’ll take your romance to levels you never thought possible.
+          <br>
+          INTIMACY:
+          Intimacy is more than sex. It’s cuddling in bed on Sundays or holding hands on a walk. It’s emotional closeness and trust. And it’s ultimately what separates romance from friendship.
+          <br>
+          All truly extraordinary love affairs share one thing: they are the result of total commitment. They aren’t always easy, but they are always worth it.</p>
+        <hr>
+        <span (click)="open()"  (click)="openlikes2($event)"><img   class="like" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFtRCbQ8ttOqO6V-JTwBMn1dZ0KYq0oHnbAg&usqp=CAU"/>
+        </span> <span>Liked by {{ users2?.length }} people.. <span *ngIf="isShown">You({{y}}) </span><div  class="likee" *ngFor="let user of users2">
+        <div >{{user.name}} ,</div>  
+        
+      </div>
+    
+         
+      </span> 
+      <span >
+        <br>
+       <input type="text"  placeholder="enter your comment here" id="cm2" [(ngModel)]="cmess.message" />
+       <button type="button" class="btn btn-primary"   (click)= "opencoms2($event)"  >Send</button>
+      <br> {{ coms2?.length }} Comments <br>You:{{e}} <span *ngFor="let com of coms2">
+          <ul class="myul">  <li fxLayout="row">{{com.name}}:  {{com.message}}   </li>
+          
+          </ul>
+        </span>
+       
+      </span>
+      
+      </div>
+    </div>  
+    
+  </div>
+  
+  <!-- <div class="footer">
+    <h2>T</h2>
+  </div> -->
